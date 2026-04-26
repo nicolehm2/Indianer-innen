@@ -7,54 +7,84 @@
 /* ── Band member filter definitions ─────────────────────────── */
 const MEMBERS = [
   {
-    id: 'klaus',
-    name: 'Klaus Müller',
-    alias: '"Der Knochenbrenner"',
+    id: 'hogan',
+    name: 'Hogan',
+    alias: '"Der Unbesiegbare"',
     role: 'Lead Guitar',
     emoji: '🎸',
     avatarClass: 'avatar-bg-1',
-    filter: applyKlaus,
-    description: 'Scharfe Riffs, schärfere Augen – Klaus brennt die Bühne nieder.',
+    filter: applyHogan,
+    description: 'Hogan zerreißt die Stille mit jedem Akkord.',
   },
   {
-    id: 'dieter',
-    name: 'Dieter Schröder',
-    alias: '"Thunder Faust"',
-    role: 'Drums',
-    emoji: '🥁',
-    avatarClass: 'avatar-bg-2',
-    filter: applyDieter,
-    description: 'Sein Schlagzeug hört man noch drei Bundesländer weiter.',
-  },
-  {
-    id: 'petra',
-    name: 'Petra von Rausch',
-    alias: '"Die Stachelkönigin"',
-    role: 'Vocals & Bass',
+    id: 'el-dingelong',
+    name: 'El dingelong Ling Long',
+    alias: '"Das Rätsel"',
+    role: 'Vocals',
     emoji: '🎤',
+    avatarClass: 'avatar-bg-2',
+    filter: applyElDingelong,
+    description: 'Seine Stimme ist so mysteriös wie sein Name.',
+  },
+  {
+    id: 'krabbenpuhler',
+    name: 'Krabbenpuhler',
+    alias: '"Der Schalebrecher"',
+    role: 'Bass',
+    emoji: '🦀',
     avatarClass: 'avatar-bg-3',
-    filter: applyPetra,
-    description: 'Stimme wie ein Engel, Blick wie ein Raubtier.',
+    filter: applyKrabbenpuhler,
+    description: 'Der tiefste Bass diesseits der Nordsee.',
   },
   {
-    id: 'wolfram',
-    name: 'Wolfram Krieger',
-    alias: '"The Wolf"',
-    role: 'Rhythm Guitar',
-    emoji: '🐺',
+    id: 'lehrwicht',
+    name: 'Lehrwicht',
+    alias: '"Der Weise"',
+    role: 'Keyboards',
+    emoji: '📚',
     avatarClass: 'avatar-bg-4',
-    filter: applyWolfram,
-    description: 'Er spielt, als würde er ein Gewitter beschwören.',
+    filter: applyLehrwicht,
+    description: 'Wissen ist Macht – und Lehrwicht hat beides.',
   },
   {
-    id: 'lieselotte',
-    name: 'Lieselotte Bach',
-    alias: '"Neon Hexe"',
-    role: 'Keyboards & FX',
-    emoji: '⚡',
+    id: 'mechonicker',
+    name: 'Mechonicker',
+    alias: '"Der Schrauber"',
+    role: 'Drums',
+    emoji: '🔧',
     avatarClass: 'avatar-bg-5',
-    filter: applyLieselotte,
-    description: 'Ihre Synthesizer erschaffen Welten aus Klang und Chaos.',
+    filter: applyMechonicker,
+    description: 'Sein Rhythmus läuft wie ein perfekt geöltes Getriebe.',
+  },
+  {
+    id: 'fininiküsch',
+    name: 'Fininiküsch',
+    alias: '"Der Feine"',
+    role: 'Rhythm Guitar',
+    emoji: '✨',
+    avatarClass: 'avatar-bg-6',
+    filter: applyFininiküsch,
+    description: 'Feinsinnig, präzise und immer einen Tick schneller als alle anderen.',
+  },
+  {
+    id: 'fahrschueler',
+    name: 'Der Fahrschüler',
+    alias: '"Der Lernende"',
+    role: 'Percussion',
+    emoji: '🚗',
+    avatarClass: 'avatar-bg-7',
+    filter: applyFahrschueler,
+    description: 'Noch auf der Lernkurve – aber schon jetzt kaum zu stoppen.',
+  },
+  {
+    id: 'fette-fee',
+    name: 'Die Fette Fee',
+    alias: '"Die Zauberin"',
+    role: 'FX & Synth',
+    emoji: '🧚',
+    avatarClass: 'avatar-bg-8',
+    filter: applyFetteFee,
+    description: 'Mit einem Wink ihres Zauberstabs verzaubert sie die ganze Bühne.',
   },
 ];
 
@@ -170,57 +200,88 @@ function drawSparks(ctx, w, h, color, count) {
 
 /* ── Per-member filter functions ─────────────────────────────── */
 
-/** Klaus – "Der Knochenbrenner" – Deep purple + high contrast */
-function applyKlaus(ctx, w, h) {
+/** Hogan – "Der Unbesiegbare" – Deep purple + high contrast */
+function applyHogan(ctx, w, h) {
   adjustCB(ctx, w, h, 60, -20);
   desaturate(ctx, w, h, 0.4);
   overlayTint(ctx, w, h, 100, 0, 180, 0.22);
   addVignette(ctx, w, h, 0.65);
   addScanlines(ctx, w, h);
   drawSparks(ctx, w, h, 'rgba(180,0,255,0.7)', 60);
-  addLabel(ctx, w, h, 'KLAUS MÜLLER', '"Der Knochenbrenner" · Lead Guitar');
+  addLabel(ctx, w, h, 'HOGAN', '"Der Unbesiegbare" · Lead Guitar');
 }
 
-/** Dieter – "Thunder Faust" – Teal / cyan electro */
-function applyDieter(ctx, w, h) {
+/** El dingelong Ling Long – "Das Rätsel" – Golden shimmer */
+function applyElDingelong(ctx, w, h) {
   adjustCB(ctx, w, h, 50, 10);
-  desaturate(ctx, w, h, 0.6);
-  overlayTint(ctx, w, h, 0, 220, 200, 0.28);
+  desaturate(ctx, w, h, 0.3);
+  overlayTint(ctx, w, h, 255, 200, 0, 0.25);
   addVignette(ctx, w, h, 0.5);
-  drawSparks(ctx, w, h, 'rgba(0,255,255,0.8)', 80);
-  addLabel(ctx, w, h, 'DIETER SCHRÖDER', '"Thunder Faust" · Drums');
+  drawSparks(ctx, w, h, 'rgba(255,220,0,0.9)', 90);
+  addLabel(ctx, w, h, 'EL DINGELONG LING LONG', '"Das Rätsel" · Vocals');
 }
 
-/** Petra – "Die Stachelkönigin" – Crimson red + high drama */
-function applyPetra(ctx, w, h) {
+/** Krabbenpuhler – "Der Schalebrecher" – Deep sea teal */
+function applyKrabbenpuhler(ctx, w, h) {
+  adjustCB(ctx, w, h, 40, -10);
+  desaturate(ctx, w, h, 0.5);
+  overlayTint(ctx, w, h, 0, 180, 160, 0.28);
+  addVignette(ctx, w, h, 0.6);
+  drawSparks(ctx, w, h, 'rgba(0,220,200,0.8)', 70);
+  addScanlines(ctx, w, h);
+  addLabel(ctx, w, h, 'KRABBENPUHLER', '"Der Schalebrecher" · Bass');
+}
+
+/** Lehrwicht – "Der Weise" – Warm amber tones */
+function applyLehrwicht(ctx, w, h) {
+  adjustCB(ctx, w, h, 55, 5);
+  desaturate(ctx, w, h, 0.35);
+  overlayTint(ctx, w, h, 200, 120, 0, 0.22);
+  addVignette(ctx, w, h, 0.55);
+  drawSparks(ctx, w, h, 'rgba(255,160,0,0.7)', 50);
+  addLabel(ctx, w, h, 'LEHRWICHT', '"Der Weise" · Keyboards');
+}
+
+/** Mechonicker – "Der Schrauber" – Industrial steel grey */
+function applyMechonicker(ctx, w, h) {
   adjustCB(ctx, w, h, 70, -30);
-  desaturate(ctx, w, h, 0.2);
-  overlayTint(ctx, w, h, 230, 20, 20, 0.3);
+  desaturate(ctx, w, h, 0.7);
+  overlayTint(ctx, w, h, 120, 130, 140, 0.2);
   addVignette(ctx, w, h, 0.7);
   addScanlines(ctx, w, h);
-  drawSparks(ctx, w, h, 'rgba(255,50,50,0.8)', 50);
-  addLabel(ctx, w, h, 'PETRA VON RAUSCH', '"Die Stachelkönigin" · Vocals & Bass');
+  drawSparks(ctx, w, h, 'rgba(200,210,220,0.6)', 40);
+  addLabel(ctx, w, h, 'MECHONICKER', '"Der Schrauber" · Drums');
 }
 
-/** Wolfram – "The Wolf" – Dark blue steel */
-function applyWolfram(ctx, w, h) {
-  adjustCB(ctx, w, h, 40, -40);
-  desaturate(ctx, w, h, 0.55);
-  overlayTint(ctx, w, h, 20, 60, 180, 0.25);
-  addVignette(ctx, w, h, 0.75);
-  drawSparks(ctx, w, h, 'rgba(100,150,255,0.6)', 40);
-  addLabel(ctx, w, h, 'WOLFRAM KRIEGER', '"The Wolf" · Rhythm Guitar');
-}
-
-/** Lieselotte – "Neon Hexe" – Neon yellow / green chaos */
-function applyLieselotte(ctx, w, h) {
-  adjustCB(ctx, w, h, 80, 20);
-  desaturate(ctx, w, h, 0.35);
-  overlayTint(ctx, w, h, 180, 255, 0, 0.25);
+/** Fininiküsch – "Der Feine" – Silver & ice blue */
+function applyFininiküsch(ctx, w, h) {
+  adjustCB(ctx, w, h, 45, 15);
+  desaturate(ctx, w, h, 0.45);
+  overlayTint(ctx, w, h, 160, 200, 255, 0.22);
   addVignette(ctx, w, h, 0.45);
-  drawSparks(ctx, w, h, 'rgba(200,255,0,0.9)', 100);
+  drawSparks(ctx, w, h, 'rgba(180,220,255,0.9)', 80);
+  addLabel(ctx, w, h, 'FININIKÜSCH', '"Der Feine" · Rhythm Guitar');
+}
+
+/** Der Fahrschüler – "Der Lernende" – Bright orange energy */
+function applyFahrschueler(ctx, w, h) {
+  adjustCB(ctx, w, h, 65, 10);
+  desaturate(ctx, w, h, 0.25);
+  overlayTint(ctx, w, h, 255, 100, 0, 0.28);
+  addVignette(ctx, w, h, 0.5);
+  drawSparks(ctx, w, h, 'rgba(255,130,0,0.85)', 75);
   addScanlines(ctx, w, h);
-  addLabel(ctx, w, h, 'LIESELOTTE BACH', '"Neon Hexe" · Keys & FX');
+  addLabel(ctx, w, h, 'DER FAHRSCHÜLER', '"Der Lernende" · Percussion');
+}
+
+/** Die Fette Fee – "Die Zauberin" – Magical pink & violet */
+function applyFetteFee(ctx, w, h) {
+  adjustCB(ctx, w, h, 80, 20);
+  desaturate(ctx, w, h, 0.2);
+  overlayTint(ctx, w, h, 220, 80, 200, 0.28);
+  addVignette(ctx, w, h, 0.45);
+  drawSparks(ctx, w, h, 'rgba(255,100,220,0.9)', 110);
+  addLabel(ctx, w, h, 'DIE FETTE FEE', '"Die Zauberin" · FX & Synth');
 }
 
 /* ── DOM helpers ─────────────────────────────────────────────── */

@@ -237,6 +237,9 @@ a:hover { opacity: .75; }
 .avatar-bg-3 { background: linear-gradient(135deg, #200000, #4d0000, #200000); }
 .avatar-bg-4 { background: linear-gradient(135deg, #001520, #00263d, #001520); }
 .avatar-bg-5 { background: linear-gradient(135deg, #1a1a00, #404000, #1a1a00); }
+.avatar-bg-6 { background: linear-gradient(135deg, #001020, #002040, #001020); }
+.avatar-bg-7 { background: linear-gradient(135deg, #201000, #4d2800, #201000); }
+.avatar-bg-8 { background: linear-gradient(135deg, #200020, #4d004d, #200020); }
 
 /* ---------- Filter selector (inside transform tool) ---------- */
 .filter-selector {
